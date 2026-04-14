@@ -2,7 +2,7 @@
 
 Welcome to my archive of cybersecurity writeups!
 
-# [Here's Link to main page](https://valay-2004.github.io/THM-Writeups/)
+# [Here's Link to main page](https://valay-2004.github.io/CTF-Writeups/)
 
 ## 🔍 Contents
 
