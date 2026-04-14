@@ -44,25 +44,30 @@ Welcome to my archive of cybersecurity writeups!
 ## 🚩 picoCTF 2026
 
 ### Binary Exploitation
-- [QuizSploit](./picoCTF26/Binary%20Exploitation/QuizSploit.md)
+
+- [QuizSploit](./picoCTF26/BinaryExploitation/QuizSploit.md)
 
 ### Forensics
-- [Timeline 0 (100 pt)](./picoCTF26/Forensics/Timeline%200.md)
-- [Binary Digits](./picoCTF26/Forensics/Binary%20Digits.md)
+
+- [Timeline 0 (100 pt)](./picoCTF26/Forensics/Timeline_0.md)
+- [Binary Digits](./picoCTF26/Forensics/BinaryDigits.md)
 
 ### General Skills
-- [KSECRETS (100 pt)](./picoCTF26/General%20Skills/KSECRETS.md)
-- [Password Profiler (100 pt)](./picoCTF26/General%20Skills/Password%20Profiler.md)
-- [Shared Secret (100 pt)](./picoCTF26/General%20Skills/Shared%20Secret.md)
-- [ping-cmd (100 pt)](./picoCTF26/General%20Skills/ping-cmd.md)
-- [bytemancy 0](./picoCTF26/General%20Skills/bytemancy%200.md)
-- [MY GIT](./picoCTF26/General%20Skills/MY%20GIT.md)
-- [Piece by Piece](./picoCTF26/General%20Skills/Piece%20by%20Piece.md)
-- [Printer Share](./picoCTF26/General%20Skills/Printer%20Share.md)
-- [SUDO MAKE ME A SANDWICH](./picoCTF26/General%20Skills/SUDO%20MAKE%20ME%20A%20SANDWICH.md)
+
+- [KSECRETS (100 pt)](./picoCTF26/GeneralSkills/KSECRETS.md)
+- [Password Profiler (100 pt)](./picoCTF26/GeneralSkills/Password_Profiler.md)
+- [Shared Secret (100 pt)](./picoCTF26/GeneralSkills/Shared_Secret.md)
+- [ping-cmd (100 pt)](./picoCTF26/GeneralSkills/ping-cmd.md)
+- [bytemancy 0](./picoCTF26/GeneralSkills/bytemancy_0.md)
+- [MY GIT](./picoCTF26/GeneralSkills/MY_GIT.md)
+- [Piece by Piece](./picoCTF26/GeneralSkills/Piece_by_Piece.md)
+- [Printer Share](./picoCTF26/GeneralSkills/PrinterShare.md)
+- [SUDO MAKE ME A SANDWICH](./picoCTF26/GeneralSkills/SUDO_MAKE_ME_A_SANDWICH.md)
 
 ### Reverse Engineering
-- [GateKeeper](./picoCTF26/Reverse%20Engineering/GateKeeper.md)
+
+- [GateKeeper](./picoCTF26/ReverseEngineering/GateKeeper.md)
 
 ### Web Exploitation
-- [North-South (100 pt)](./picoCTF26/Web%20Exploitation/North-South.md)
+
+- [North-South (100 pt)](./picoCTF26/WebExploitation/North-South.md)
