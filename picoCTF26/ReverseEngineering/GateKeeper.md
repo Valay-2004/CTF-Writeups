@@ -1,4 +1,3 @@
-
 Author: Yahaya Meddy
 
 #### Description
@@ -6,6 +5,7 @@ Author: Yahaya Meddy
 What’s behind the numeric gate? You only get access if you enter the _right_ kind of number. You can download the program file [here](https://challenge-files.picoctf.net/c_green_hill/5baff00695e30be7ca9d1202abff4cde6d9262a62282c40c491d250b66fa5678/gatekeeper). Reverse the program behavior and find what input grants access to the secret flag. `nc green-hill.picoctf.net 61972`.
 
 Hints:
+
 - Tools like `Ghidra`, IDA Free, or Radare2 can analyze the binary’s logic.
 - The program’s output isn’t straightforward; reversing the string and cleaning out extra text may help you recover the flag.
 
@@ -231,6 +231,7 @@ Then: take the cursed output → reverse it → delete all `pi_co_ctf` → profi
 > **Callout – pro tip**
 
 You don’t even need Ghidra/IDA if you just notice:
+
 - it wants length == 3
 - it accepts hex
 - range 1000–9999
@@ -243,4 +244,4 @@ Flag:
 **`picoctf{3_digit_hex_GT_999_f82175fa}`**
 
 thanks to the bro who said 3E8 first ..... legend 🙏  
-see you in the next reversing hell  
+see you in the next reversing hell
