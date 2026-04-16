@@ -5,18 +5,22 @@ Author: LT 'syreal' Jones
 
 Can you find the flag in this disk image? Wrap what you find in the `picoCTF` flag format. Download the disk image [here](https://challenge-files.picoctf.net/c_plain_mesa/aa1f8ba93409887e081435732d7037c45b30a8442853bf07c9e84fe4d0e0bc19/partition4.img.gz).
 
-Hints: 
+Hints:
+
 1. Create a `Sleuthkit` MAC timeline!
 2. Sloppy timestomping can yield strange (very old) timestamps
+
 ---
+
 #### Finding the flag in partition4.img
 
 1. **Confirm the file type**  
    It's a raw ext4 filesystem (no partition table needed).
+
    ```bash
-	└─$ file partition4.img 
-	partition4.img: Linux rev 1.0 ext4 filesystem data, UUID=7a00e9da-98f8-4f0f-b257-95edf422d902 (extents) (64bit) (large files) (huge files)
-	```
+   └─$ file partition4.img
+   partition4.img: Linux rev 1.0 ext4 filesystem data, UUID=7a00e9da-98f8-4f0f-b257-95edf422d902 (extents) (64bit) (large files) (huge files)
+   ```
 
 2. **Generate a bodyfile with all file metadata (including deleted files)**  
    Use `fls` recursively (`-r`) and set the mount point prefix (`-m /`).
@@ -25,7 +29,6 @@ Hints:
    fls -r -m / partition4.img > bodyfile.txt
    ```
 
-	
 3. **Create a readable MAC timeline**  
    Use `mactime` to turn the `bodyfile` into a sorted timeline.  
    The `-d` flag gives CSV output (easier to sort/filter in a spreadsheet if you want).
@@ -39,8 +42,8 @@ Hints:
 4. **Look for anomalies in the timeline**  
    Open `timeline.txt` (or `timeline.csv`) and search / scroll for **very old or suspicious timestamps**.
 
-   Hint keywords from the problem:  
-   - "sloppy timestomping"  
+   Hint keywords from the problem:
+   - "sloppy timestomping"
    - "very old timestamps"
 
    In this case, you’ll find something like:
