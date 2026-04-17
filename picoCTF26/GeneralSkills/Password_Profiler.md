@@ -4,25 +4,28 @@ Author: Yahaya Meddy
 
 #### Description
 
-We intercepted a suspicious file from a system, but instead of the password itself, it only contains its SHA-1 hash. Using OSINT techniques, you are provided with personal details about the target. Your task is to leverage this information to generate a custom password list and recover the original password by matching its hash. Download the following files: 
-[userinfo](https://challenge-files.picoctf.net/c_plain_mesa/3c16fb8e48ddae444f6840e81660a5a8cb2d30b69092b04f619d6ac34676a919/userinfo.txt): Contains the personal details. 
+We intercepted a suspicious file from a system, but instead of the password itself, it only contains its SHA-1 hash. Using OSINT techniques, you are provided with personal details about the target. Your task is to leverage this information to generate a custom password list and recover the original password by matching its hash. Download the following files:
+[userinfo](https://challenge-files.picoctf.net/c_plain_mesa/3c16fb8e48ddae444f6840e81660a5a8cb2d30b69092b04f619d6ac34676a919/userinfo.txt): Contains the personal details.
 [hash](https://challenge-files.picoctf.net/c_plain_mesa/3c16fb8e48ddae444f6840e81660a5a8cb2d30b69092b04f619d6ac34676a919/hash.txt): Contains the SHA-1 hash of the password. [check_password](https://challenge-files.picoctf.net/c_plain_mesa/3c16fb8e48ddae444f6840e81660a5a8cb2d30b69092b04f619d6ac34676a919/check_password.py): Script to test passwords against the hash.
 
-Hint: 
+Hint:
+
 1. [CUPP](https://github.com/Mebus/cupp) is a Python tool for generating custom wordlists from personal data.
 
+---
 
-------
 We have the give three files
+
 ```bash
 └─$ ls
 check_password.py  hash.txt  userinfo.txt
 ```
 
-Having contents 
+Having contents
+
 ```bash
 └─$ echo 'UserInfo: ';cat userinfo.txt; echo '------------------------'; echo 'Hash: ';cat hash.txt
-UserInfo: 
+UserInfo:
 First Name: Alice
 Surname: Johnson
 Nickname: AJ
@@ -31,11 +34,12 @@ Partner's Name: Bob
 Child's Name: Charlie
 
 ------------------------
-Hash: 
+Hash:
 968c2349040273dd57dc4be7e238c5ac200ceac5
 ```
 
 And a python script named `check_password.py`
+
 ```python
 #!/usr/bin/env python3
 import hashlib
@@ -66,14 +70,15 @@ if __name__ == "__main__":
 ```
 
 So to get the `password.txt` from the given info we will be using CUPP which the challenge ask us to use
+
 ```bash
 └─$ python3 cupp.py
- ___________ 
+ ___________
    cupp.py!                 # Common
       \                     # User
        \   ,__,             # Passwords
         \  (oo)____         # Profiler
-           (__)    )\   
+           (__)    )\
               ||--|| *      [ Muris Kurgas | j0rgan@remote-exploit.org ]
                             [ Mebus | https://github.com/Mebus/]
 
@@ -93,14 +98,16 @@ options:
 ```
 
 We got `10359` passwords for alice
+
 ```bash
 └─$ cat alice.txt| wc -l
 10359
 ```
 
 Now let's check for the password (it was pretty quick)
+
 ```bash
-└─$ python3 check_password.py 
+└─$ python3 check_password.py
 Password found: picoCTF{Aj_15901990}
 ```
 

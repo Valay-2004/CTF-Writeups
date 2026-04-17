@@ -7,12 +7,15 @@ I have built my own Git server with my own rules!
 Additional details will be available after launching your challenge instance.
 
 Hints:
+
 1. How do you specify your Git username and email?
 
 ---
-After cloning the git repo we get a `challenge` named directory and in that dir. we have one README.md file 
-```README.md
-└─$ cat README.md 
+
+After cloning the git repo we get a `challenge` named directory and in that dir. we have one README.md file
+
+````README.md
+└─$ cat README.md
 # MyGit
 
 ### If you want the flag, make sure to push the flag!
@@ -20,7 +23,7 @@ After cloning the git repo we get a `challenge` named directory and in that dir.
 Only flag.txt pushed by ```root:root@picoctf``` will be updated with the flag.
 
 GOOD LUCK!
-```
+````
 
 Ok so let's try to push a fake flag here
 
@@ -58,11 +61,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 Add the `flag.txt` >
+
 ```bash
-└─$ git add flag.txt 
+└─$ git add flag.txt
 ```
 
 Commit it >
+
 ```bash
 └─$ GIT_COMMITTER_NAME=root GIT_COMMITTER_EMAIL=root@picoctf \
 git commit -m "add flag" --author="root <root@picoctf>"
@@ -73,12 +78,13 @@ git commit -m "add flag" --author="root <root@picoctf>"
 ```
 
 Push it >
+
 ```bash
-└─$ git push            
+└─$ git push
 ** WARNING: connection is not using a post-quantum key exchange algorithm.
 ** This session may be vulnerable to "store now, decrypt later" attacks.
 ** The server may need to be upgraded. See https://openssh.com/pq.html
-git@foggy-cliff.picoctf.net's password: 
+git@foggy-cliff.picoctf.net's password:
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 Delta compression using up to 4 threads
@@ -92,9 +98,8 @@ To ssh://foggy-cliff.picoctf.net:59916/git/challenge.git
    088b58f..3c71f40  master -> master
 ```
 
+And we have our flag
 
-And we have our flag 
 ```shell
 picoCTF{1mp3rs0n4t4_g17_345y_367122f4}
 ```
-

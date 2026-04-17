@@ -1,17 +1,21 @@
 Author: Darkraicg492
 
 100pt.
+
 #### Description
+
 We have a kubernetes cluster setup and flag is in the secrets. You think you can get it?
 
 Additional details will be available after launching your challenge instance.
 
 Hints:
+
 1. Where are secrets usually stored in Kubernetes
 2. How are Kubernetes secrets stored internally? Can you decode them?
 3. Please ignore TLS
 
 ---
+
 **Solution steps**
 
 1. **Prepare the `kubeconfig`**  
@@ -85,9 +89,10 @@ Hints:
 **Flag**  
 `picoCTF{ks3cr375_41n7_s4f3_52f603c4}`
 
-**Key learning points**  
-- Kubernetes Secrets of type `Opaque` store data as base64-encoded values (not encrypted unless encryption-at-rest is configured).  
-- With admin-level access (via client certificate), you can read any secret in the cluster.  
-- Always check namespaces other than `default`,  CTF flags are frequently placed in challenge-specific namespaces like `picoctf`.
+**Key learning points**
+
+- Kubernetes Secrets of type `Opaque` store data as base64-encoded values (not encrypted unless encryption-at-rest is configured).
+- With admin-level access (via client certificate), you can read any secret in the cluster.
+- Always check namespaces other than `default`, CTF flags are frequently placed in challenge-specific namespaces like `picoctf`.
 
 Short, sweet, and solved in under 5 minutes once you point `kubectl` at the right API server. Classic `kube` secret leak challenge.
