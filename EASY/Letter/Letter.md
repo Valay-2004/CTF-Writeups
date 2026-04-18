@@ -45,7 +45,7 @@ Example: {Pierre-Henry_Lagaffe_23}
 
 ---
 
-We're three files (2 images + 1 note).
+We've got three files (2 images + 1 note).
 
 1. Letter
    ![Letter](images/letter.png)
