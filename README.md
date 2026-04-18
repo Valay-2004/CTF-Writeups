@@ -33,6 +33,7 @@ Welcome to my archive of cybersecurity writeups!
 - [Epoch](./EASY/Epoch/)
 - [Confidential](./EASY/confidential/)
 - [VulnNet Roasted](./EASY/Vulnet/VulnetRoasted/)
+- [Letter](./EASY/Letter/)
 
 ### MEDIUM
 
