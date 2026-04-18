@@ -34,6 +34,7 @@ Welcome to my archive of cybersecurity writeups!
 - [Confidential](./EASY/confidential/)
 - [VulnNet Roasted](./EASY/Vulnet/VulnetRoasted/)
 - [Letter](./EASY/Letter/)
+- [DevDiaries](./EASY/DevDiaries/)
 
 ### MEDIUM
 
