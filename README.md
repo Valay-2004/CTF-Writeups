@@ -1,10 +1,12 @@
-# 🧠 Valay's Writeups
+<div align="center">
+<img src="assets/ctfWriteupFavicon.png" width="40" height="40"> 
+<p style="font-size: 30px;">Valay's Writeups</p>
+<p style="font-size: 20px;">Welcome to my archive of cybersecurity writeups!</p>
+</div>
 
-Welcome to my archive of cybersecurity writeups!
+# <a href="https://valay-2004.github.io/CTF-Writeups/" target="_blank">Here's Link to main page</a>
 
-# [Here's Link to main page](https://valay-2004.github.io/CTF-Writeups/)
-
-## 🔍 Contents
+## <img src="https://cdn-icons-png.flaticon.com/512/1174/1174975.png" width="20" height="20"> Contents
 
 - [TryHackMe Writeups](#-tryhackme-writeups)
   - [EASY](#easy)
@@ -18,7 +20,7 @@ Welcome to my archive of cybersecurity writeups!
 
 ---
 
-## 🛠️ TryHackMe Writeups
+## <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tryhackme.svg" width="20" height="20"> &nbsp; TryHackMe Writeups
 
 ### EASY
 
@@ -43,7 +45,7 @@ Welcome to my archive of cybersecurity writeups!
 
 ---
 
-## 🚩 picoCTF 2026
+## <img src="https://picoctf.org/img/logos/picoctf-logo-horizontal-white.svg" width="100" height="30"> picoCTF 2026 Writeups
 
 ### Binary Exploitation
 
