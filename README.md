@@ -1,10 +1,10 @@
 <div align="center">
-<img src="assets/ctfWriteupFavicon.png" width="40" height="40"> 
-<p style="font-size: 30px;">Valay's Writeups</p>
-<p style="font-size: 20px;">Welcome to my archive of cybersecurity writeups!</p>
+<img src="assets/ctfWriteupFavicon.png" width="80" height="80"> 
+<h2>Valay's Writeups</h2>
+<h3>Welcome to my archive of cybersecurity writeups!</h3>
 </div>
 
-# <a href="https://valay-2004.github.io/CTF-Writeups/" target="_blank">Here's Link to main page</a>
+# <a href="https://valay-2004.github.io/CTF-Writeups/" target="_blank" style="text-align: center;">Here's Link to main page</a>
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/1174/1174975.png" width="20" height="20"> Contents
 
@@ -24,25 +24,25 @@
 
 ### EASY
 
-- [Evil-GPT v2](./EASY/evilgpt-v2/)
-- [cryptosystem](./EASY/cryptosystem/index.md)
-- [Order](./EASY/Order/)
-- [catpictures](./EASY/catpictures/)
-- [JPGChat](./EASY/JPGChat/)
-- [Hidden Deep In My Heart](./EASY/Hidden-Deep-Into-My-Heart/)
-- [TryHeartMe](./EASY/TryHeartMe/)
-- [Operation Slither](./EASY/operationslitherIU/)
-- [Epoch](./EASY/Epoch/)
-- [Confidential](./EASY/confidential/)
-- [VulnNet Roasted](./EASY/Vulnet/VulnetRoasted/)
-- [Letter](./EASY/Letter/)
-- [DevDiaries](./EASY/DevDiaries/)
+- [Evil-GPT v2](./TryHackMe/EASY/evilgpt-v2/)
+- [cryptosystem](./TryHackMe/EASY/cryptosystem/index.md)
+- [Order](./TryHackMe/EASY/Order/)
+- [catpictures](./TryHackMe/EASY/catpictures/)
+- [JPGChat](./TryHackMe/EASY/JPGChat/)
+- [Hidden Deep In My Heart](./TryHackMe/EASY/Hidden-Deep-Into-My-Heart/)
+- [TryHeartMe](./TryHackMe/EASY/TryHeartMe/)
+- [Operation Slither](./TryHackMe/EASY/operationslitherIU/)
+- [Epoch](./TryHackMe/EASY/Epoch/)
+- [Confidential](./TryHackMe/EASY/confidential/)
+- [VulnNet Roasted](./TryHackMe/EASY/Vulnet/VulnetRoasted/)
+- [Letter](./TryHackMe/EASY/Letter/)
+- [DevDiaries](./TryHackMe/EASY/DevDiaries/)
 
 ### MEDIUM
 
-- [Hammer](./MEDIUM/Hammer/)
-- [Unstable Twin](./MEDIUM/Unstable-Twin/)
-- [Masquerade](./MEDIUM/Masquerade/)
+- [Hammer](./TryHackMe/MEDIUM/Hammer/)
+- [Unstable Twin](./TryHackMe/MEDIUM/Unstable-Twin/)
+- [Masquerade](./TryHackMe/MEDIUM/Masquerade/)
 
 ---
 
@@ -50,29 +50,29 @@
 
 ### Binary Exploitation
 
-- [QuizSploit](./picoCTF26/BinaryExploitation/QuizSploit.md)
+- [QuizSploit](./PicoCTF/picoCTF26/BinaryExploitation/QuizSploit.md)
 
 ### Forensics
 
-- [Timeline 0 (100 pt)](./picoCTF26/Forensics/Timeline_0.md)
-- [Binary Digits](./picoCTF26/Forensics/BinaryDigits.md)
+- [Timeline 0 (100 pt)](./PicoCTF/picoCTF26/Forensics/Timeline_0.md)
+- [Binary Digits](./PicoCTF/picoCTF26/Forensics/BinaryDigits.md)
 
 ### General Skills
 
-- [KSECRETS (100 pt)](./picoCTF26/GeneralSkills/KSECRETS.md)
-- [Password Profiler (100 pt)](./picoCTF26/GeneralSkills/Password_Profiler.md)
-- [Shared Secret (100 pt)](./picoCTF26/GeneralSkills/Shared_Secret.md)
-- [ping-cmd (100 pt)](./picoCTF26/GeneralSkills/ping-cmd.md)
-- [bytemancy 0](./picoCTF26/GeneralSkills/bytemancy_0.md)
-- [MY GIT](./picoCTF26/GeneralSkills/MY_GIT.md)
-- [Piece by Piece](./picoCTF26/GeneralSkills/Piece_by_Piece.md)
-- [Printer Share](./picoCTF26/GeneralSkills/PrinterShare.md)
-- [SUDO MAKE ME A SANDWICH](./picoCTF26/GeneralSkills/SUDO_MAKE_ME_A_SANDWICH.md)
+- [KSECRETS (100 pt)](./PicoCTF/picoCTF26/GeneralSkills/KSECRETS.md)
+- [Password Profiler (100 pt)](./PicoCTF/picoCTF26/GeneralSkills/Password_Profiler.md)
+- [Shared Secret (100 pt)](./PicoCTF/picoCTF26/GeneralSkills/Shared_Secret.md)
+- [ping-cmd (100 pt)](./PicoCTF/picoCTF26/GeneralSkills/ping-cmd.md)
+- [bytemancy 0](./PicoCTF/picoCTF26/GeneralSkills/bytemancy_0.md)
+- [MY GIT](./PicoCTF/picoCTF26/GeneralSkills/MY_GIT.md)
+- [Piece by Piece](./PicoCTF/picoCTF26/GeneralSkills/Piece_by_Piece.md)
+- [Printer Share](./PicoCTF/picoCTF26/GeneralSkills/PrinterShare.md)
+- [SUDO MAKE ME A SANDWICH](./PicoCTF/picoCTF26/GeneralSkills/SUDO_MAKE_ME_A_SANDWICH.md)
 
 ### Reverse Engineering
 
-- [GateKeeper](./picoCTF26/ReverseEngineering/GateKeeper.md)
+- [GateKeeper](./PicoCTF/picoCTF26/ReverseEngineering/GateKeeper.md)
 
 ### Web Exploitation
 
-- [North-South (100 pt)](./picoCTF26/WebExploitation/North-South.md)
+- [North-South (100 pt)](./PicoCTF/picoCTF26/WebExploitation/North-South.md)
