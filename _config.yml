@@ -1,15 +1,17 @@
 title: "Valay's Writeups"
-description: "Detailed walkthroughs for TryHackMe (THM) rooms, CTFs, and cybersecurity challenges."
-url: "https://valay-2004.github.io/THM-Writeups" # Replace with your actual GitHub Pages URL
+description: "Detailed walkthroughs for TryHackMe (THM) rooms, CTFs, and cybersecurity challenges. Practical guides, commands, and explanations."
+url: "https://valay-2004.github.io/THM-Writeups"
+baseurl: "/THM-Writeups" # Important for GitHub Pages if repo name != username.github.io
 author: "Valay"
 theme: jekyll-theme-cayman
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed # Optional but useful for RSS
 
 sass:
-  style: :compressed
+  style: compressed
 
 markdown: kramdown
 highlighter: rouge
@@ -18,3 +20,19 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     line_numbers: false
+    default_lang: console # Helps for command-heavy writeups
+
+# SEO & Social enhancements
+twitter:
+  username: ghost_valay # Add if you have one
+
+social:
+  name: Valay
+  links:
+    - https://github.com/valay-2004
+    - https://x.com/ghost_valay
+    - https://www.linkedin.com/in/valay2004/
+    # Add more (Twitter, LinkedIn, etc.)
+
+# Optional: Better date format for writeups
+future: true # If you want to schedule posts
