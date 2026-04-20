@@ -223,83 +223,122 @@
 
 /* GitHub-style Markdown Alerts */
 .markdown-alert {
-  padding: 0.5rem 1rem;
-  margin-bottom: 16px;
+  padding: 12px 16px;
+  margin: 16px 0;
   color: inherit;
-  border-left: 0.25em solid #d0d7de !important;
-  background: transparent !important;
+  border-left: 4px solid;
+  border-radius: 0 6px 6px 0;
+  background: #161b22;
+  position: relative;
 }
+
+/* Reset any inherited blockquote styles */
+.markdown-alert blockquote {
+  border-left: none;
+  margin: 0;
+  padding: 0;
+}
+
 .markdown-alert > :first-child {
   margin-top: 0;
 }
+
 .markdown-alert > :last-child {
-  margin-bottom: 0 !important;
-}
-.markdown-alert .markdown-alert-title {
-  display: flex;
-  font-weight: 500;
-  align-items: center;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-.markdown-alert-note {
-  border-left-color: #0969da !important;
-}
-.markdown-alert-note .markdown-alert-title {
-  color: #0969da;
-}
-.markdown-alert-tip {
-  border-left-color: #1a7f37 !important;
-}
-.markdown-alert-tip .markdown-alert-title {
-  color: #1a7f37;
-}
-.markdown-alert-important {
-  border-left-color: #8250df !important;
-}
-.markdown-alert-important .markdown-alert-title {
-  color: #8250df;
-}
-.markdown-alert-warning {
-  border-left-color: #bf8700 !important;
-}
-.markdown-alert-warning .markdown-alert-title {
-  color: #bf8700;
-}
-.markdown-alert-caution {
-  border-left-color: #cf222e !important;
-}
-.markdown-alert-caution .markdown-alert-title {
-  color: #cf222e;
+  margin-bottom: 0;
 }
 
+/* Title */
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.markdown-alert .markdown-alert-title svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ===================== Alert Types ===================== */
+
+.markdown-alert-note {
+  border-left-color: #2f81f7;
+}
+.markdown-alert-note .markdown-alert-title {
+  color: #2f81f7;
+}
+
+.markdown-alert-tip {
+  border-left-color: #3fb950;
+}
+.markdown-alert-tip .markdown-alert-title {
+  color: #3fb950;
+}
+
+.markdown-alert-important {
+  border-left-color: rgb(137, 87, 229);
+}
+.markdown-alert-important .markdown-alert-title {
+  color: rgb(137, 87, 229);
+}
+
+.markdown-alert-warning {
+  border-left-color: #d29922;
+}
+.markdown-alert-warning .markdown-alert-title {
+  color: #d29922;
+}
+
+.markdown-alert-caution {
+  border-left-color: #f85149;
+}
+.markdown-alert-caution .markdown-alert-title {
+  color: #f85149;
+}
+
+/* ===================== Dark Mode ===================== */
 @media (prefers-color-scheme: dark) {
   .markdown-alert-note {
-    border-left-color: #2f81f7 !important;
+    --alert-border: #2f81f7;
+    --alert-bg: rgba(47, 129, 247, 0.3); /* Boosted for visibility */
   }
   .markdown-alert-note .markdown-alert-title {
     color: #2f81f7;
   }
+
   .markdown-alert-tip {
-    border-left-color: #3fb950 !important;
+    --alert-border: #3fb950;
+    --alert-bg: rgba(63, 185, 80, 0.3);
   }
   .markdown-alert-tip .markdown-alert-title {
     color: #3fb950;
   }
+
   .markdown-alert-important {
-    border-left-color: #ab7df8 !important;
+    --alert-border: #ab7df8;
+    --alert-bg: rgba(171, 125, 248, 0.3);
   }
   .markdown-alert-important .markdown-alert-title {
     color: #ab7df8;
   }
+
   .markdown-alert-warning {
-    border-left-color: #d29922 !important;
+    --alert-border: #d29922;
+    --alert-bg: rgba(210, 153, 34, 0.3);
   }
   .markdown-alert-warning .markdown-alert-title {
     color: #d29922;
   }
+
   .markdown-alert-caution {
-    border-left-color: #f85149 !important;
+    --alert-border: #f85149;
+    --alert-bg: rgba(248, 81, 73, 0.3);
   }
   .markdown-alert-caution .markdown-alert-title {
     color: #f85149;
