@@ -42,6 +42,7 @@
 
 - [Hammer](./MEDIUM/Hammer/)
 - [Unstable Twin](./MEDIUM/Unstable-Twin/)
+- [Masquerade](./MEDIUM/Masquerade/)
 
 ---
 
