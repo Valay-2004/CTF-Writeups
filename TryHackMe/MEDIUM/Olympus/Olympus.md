@@ -90,7 +90,7 @@ So, here we are treated with the given page
 
 ![](attachment/d6d893489354203a75cfc50b077e4cca.png)
 
-> [!HINT]
+> [!TIP]
 > The old version of the website is still accessible on this domain
 
 Thus, let's try to enumerate further and see where we can access the old version -- hope it will be helpful to us...
@@ -394,7 +394,8 @@ Table: chats
 ```
 
 Thus our filename was change to
-`rev-shell.php` --> `8d9628edbc5c4dc519a7428f0d300dd6.php`
+
+> `rev-shell.php` --> `8d9628edbc5c4dc519a7428f0d300dd6.php`
 
 WOOOOOOOOO WE GOT INNNN >>>>>>
 
@@ -498,11 +499,12 @@ eRZjPBIy1rjIUiWe6LS1ToEyqfY=
   - `chmod 400 id_rsa`
 - Log in using the private key
 
-AHH WHY IS IT ALWAYS `PLEASE ENTER YOUR PASSWORD` & why not `YEAH GO IN` ---- until its our creds ⚠️
-
 ![](attachment/f94c4fe54b6d625c71d953ee67b8acab.png)
 
+AHH WHY IS IT ALWAYS `PLEASE ENTER YOUR PASSWORD` & why not `YEAH GO IN` ---- until its our creds ⚠️
+
 We'll make use of `john` here to get the passphrase
+
 WEEWOO We got it
 
 ```bash
