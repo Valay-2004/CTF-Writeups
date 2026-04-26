@@ -393,9 +393,18 @@ All are accepted even the REJECTED ones 😁😁😁
 > [!TIP]
 > This is the final flag **Approving** all.
 
+As us `fresher` know very well how hurtful it is to get reject mail 😓
+![](attachment/reject_mail.png)
+
 ---
 
 ## Conclusion
+
+Q. What is the flag value after logging in as a normal user?
+--> `THM{LOGGED_IN_USER}`
+
+Q. What is the flag value after logging in as admin?
+--> `THM{LOGGED_IN_ADM1N1}`
 
 Thus we solved it!!
 
