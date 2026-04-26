@@ -44,6 +44,7 @@
 - [Unstable Twin](./TryHackMe/MEDIUM/Unstable-Twin/)
 - [Masquerade](./TryHackMe/MEDIUM/Masquerade/)
 - [Olympus](./TryHackMe/MEDIUM/Olympus/)
+- [Recruit](./TryHackMe/MEDIUM/Recruit/)
 
 ---
 
