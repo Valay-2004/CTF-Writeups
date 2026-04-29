@@ -46,6 +46,10 @@
 - [Olympus](./TryHackMe/MEDIUM/Olympus/)
 - [Recruit](./TryHackMe/MEDIUM/Recruit/)
 
+### HARD
+
+- [DeadEnd](./TryHackMe/HARD/DeadEnd/)
+
 ---
 
 ## <img src="https://picoctf.org/img/logos/picoctf-logo-horizontal-white.svg" width="100" height="30"> picoCTF 2026 Writeups
