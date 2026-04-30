@@ -28,7 +28,7 @@ You're presented with two main artifacts: a memory dump and a disk image. Can yo
 
 ### Question 1
 
-> [!HINT]
+> [!TIP]
 > It's a well-known binary.
 
 The task states we are provided with two main artifacts:
