@@ -45,6 +45,7 @@
 - [Masquerade](./TryHackMe/MEDIUM/Masquerade/)
 - [Olympus](./TryHackMe/MEDIUM/Olympus/)
 - [Recruit](./TryHackMe/MEDIUM/Recruit/)
+- [You Got Mail](./TryHackMe/MEDIUM/You-Got-Mail/)
 
 ### HARD
 
