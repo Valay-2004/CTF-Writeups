@@ -40,6 +40,8 @@ Hash:
 
 And a python script named `check_password.py`
 
+{% raw %}
+
 ```python
 #!/usr/bin/env python3
 import hashlib
@@ -68,6 +70,8 @@ if __name__ == "__main__":
         print("No match found.")
 
 ```
+
+{% endraw %}
 
 So to get the `password.txt` from the given info we will be using CUPP which the challenge ask us to use
 
