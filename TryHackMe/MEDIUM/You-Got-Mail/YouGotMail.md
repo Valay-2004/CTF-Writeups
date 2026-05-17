@@ -1,5 +1,7 @@
 ---
-title: TryHackMe - You Got Mail Writeup
+title: "You Got Mail - TryHackMe Writeup & Walkthrough"
+description: "A comprehensive guide on exploiting the You Got Mail room on TryHackMe using SMTP phishing and credential dumping."
+permalink: /TryHackMe/MEDIUM/You-Got-Mail/
 date: 2026-05-13
 categories: [TryHackMe, Medium]
 tags: [smtp, phishing, mimikatz, windows, hmailserver, cewl, hydra]
