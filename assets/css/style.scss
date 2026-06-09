@@ -222,13 +222,13 @@
 }
 
 /* GitHub-style Markdown Alerts */
-.markdown-alert {
+.main-content blockquote.markdown-alert {
   padding: 12px 16px;
   margin: 16px 0;
   color: inherit;
-  border-left: 4px solid;
   border-radius: 0 6px 6px 0;
-  background: #161b22;
+  border-left: 4px solid var(--alert-border, #30363d);
+  background: var(--alert-bg, #161b22);
   position: relative;
 }
 
@@ -265,82 +265,24 @@
   fill: currentColor;
 }
 
-/* ===================== Alert Types ===================== */
-
+/* Alert type variables — dark mode only, no light mode needed */
 .markdown-alert-note {
-  border-left-color: #2f81f7;
+  --alert-border: #2f81f7;
+  --alert-bg: rgba(47, 129, 247, 0.3);
 }
-.markdown-alert-note .markdown-alert-title {
-  color: #2f81f7;
-}
-
 .markdown-alert-tip {
-  border-left-color: #3fb950;
+  --alert-border: #3fb950;
+  --alert-bg: rgba(63, 185, 80, 0.3);
 }
-.markdown-alert-tip .markdown-alert-title {
-  color: #3fb950;
-}
-
 .markdown-alert-important {
-  border-left-color: rgb(137, 87, 229);
+  --alert-border: #ab7df8;
+  --alert-bg: rgba(171, 125, 248, 0.3);
 }
-.markdown-alert-important .markdown-alert-title {
-  color: rgb(137, 87, 229);
-}
-
 .markdown-alert-warning {
-  border-left-color: #d29922;
+  --alert-border: #d29922;
+  --alert-bg: rgba(210, 153, 34, 0.3);
 }
-.markdown-alert-warning .markdown-alert-title {
-  color: #d29922;
-}
-
 .markdown-alert-caution {
-  border-left-color: #f85149;
-}
-.markdown-alert-caution .markdown-alert-title {
-  color: #f85149;
-}
-
-/* ===================== Dark Mode ===================== */
-@media (prefers-color-scheme: dark) {
-  .markdown-alert-note {
-    --alert-border: #2f81f7;
-    --alert-bg: rgba(47, 129, 247, 0.3); /* Boosted for visibility */
-  }
-  .markdown-alert-note .markdown-alert-title {
-    color: #2f81f7;
-  }
-
-  .markdown-alert-tip {
-    --alert-border: #3fb950;
-    --alert-bg: rgba(63, 185, 80, 0.3);
-  }
-  .markdown-alert-tip .markdown-alert-title {
-    color: #3fb950;
-  }
-
-  .markdown-alert-important {
-    --alert-border: #ab7df8;
-    --alert-bg: rgba(171, 125, 248, 0.3);
-  }
-  .markdown-alert-important .markdown-alert-title {
-    color: #ab7df8;
-  }
-
-  .markdown-alert-warning {
-    --alert-border: #d29922;
-    --alert-bg: rgba(210, 153, 34, 0.3);
-  }
-  .markdown-alert-warning .markdown-alert-title {
-    color: #d29922;
-  }
-
-  .markdown-alert-caution {
-    --alert-border: #f85149;
-    --alert-bg: rgba(248, 81, 73, 0.3);
-  }
-  .markdown-alert-caution .markdown-alert-title {
-    color: #f85149;
-  }
+  --alert-border: #f85149;
+  --alert-bg: rgba(248, 81, 73, 0.3);
 }
