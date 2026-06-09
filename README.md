@@ -37,6 +37,7 @@
 - [VulnNet Roasted](./TryHackMe/EASY/Vulnet/VulnetRoasted/)
 - [Letter](./TryHackMe/EASY/Letter/)
 - [DevDiaries](./TryHackMe/EASY/DevDiaries/)
+- [digdug](./TryHackMe/EASY/digdug/)
 
 ### MEDIUM
 
