@@ -7,7 +7,14 @@ categories: [TryHackMe, Medium]
 tags: [smtp, phishing, mimikatz, windows, hmailserver, cewl, hydra]
 ---
 
-# You Got Mail
+# TryHackMe: You Got Mail Writeup
+
+[![TryHackMe](https://img.shields.io/badge/TryHackMe-Medium-orange)](https://tryhackme.com/room/yougotmail)
+[![SMTP Phishing](https://img.shields.io/badge/Category-SMTP%20Phishing-brightgreen)](#)
+
+> [Room Link](https://tryhackme.com/room/yougotmail)
+
+## You Got Mail
 
 You are a penetration tester who has recently been requested to perform a security assessment for Brik. You are permitted to perform active assessments on `10.48.171.107` and strictly passive reconnaissance on [brownbrick.co](https://brownbrick.co/). The scope includes only the domain and IP provided and does not include other TLDs.
 
