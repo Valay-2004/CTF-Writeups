@@ -47,6 +47,7 @@
 - [Olympus](./TryHackMe/MEDIUM/Olympus/)
 - [Recruit](./TryHackMe/MEDIUM/Recruit/)
 - [You Got Mail](./TryHackMe/MEDIUM/You-Got-Mail/)
+- [Matroshka](./TryHackMe/MEDIUM/Matroshka/)
 
 ### HARD
 
@@ -54,7 +55,7 @@
 
 ---
 
-## <img src="https://picoctf.org/img/logos/picoctf-logo-horizontal-white.svg" width="100" height="30"> picoCTF 2026 Writeups
+## picoCTF 2026 Writeups
 
 ### Binary Exploitation
 
