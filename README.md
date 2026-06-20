@@ -48,6 +48,7 @@
 - [Recruit](./TryHackMe/MEDIUM/Recruit/)
 - [You Got Mail](./TryHackMe/MEDIUM/You-Got-Mail/)
 - [Matroshka](./TryHackMe/MEDIUM/Matroshka/)
+- [C2 Carnage](./TryHackMe/MEDIUM/Carnage/)
 
 ### HARD
 
