@@ -119,7 +119,7 @@ Which consist `flag_level2.txt` which has the following flag
 
 With the help of given hint
 
-> [!HINT] HINT
+> [!TIP] HINT >
 > **Look for an Inbox folder that allows script executions.**
 
 I searched for "inbox" directory inside the alpine system and found it.

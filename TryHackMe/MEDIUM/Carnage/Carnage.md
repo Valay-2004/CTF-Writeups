@@ -9,7 +9,7 @@ permalink: /TryHackMe/MEDIUM/Carnage/
 [![TryHackMe](https://img.shields.io/badge/TryHackMe-Medium-yellow)](https://tryhackme.com/room/c2carnage/)
 [![Network Security](https://img.shields.io/badge/Category-Network%20Security-blueviolet)](#)
 
-> Room link $\rightarrow$ https://tryhackme.com/room/c2carnage
+> Room link $\rightarrow$ [C2 Carnage](https://tryhackme.com/room/c2carnage)
 
 ## Task 1: Scenario
 
@@ -35,7 +35,7 @@ If you don't see a lab machine load, then click the Show Split View button.
 
 ## Task 2: Traffic Analysis
 
-##### What was the date and time for the first HTTP connection to the malicious IP? (answer format: yyyy-mm-dd hh:mm:ss)
+### What was the date and time for the first HTTP connection to the malicious IP? (answer format: yyyy-mm-dd hh:mm:ss)
 
 First of all let's check the endpoints in the packets with `Statistics > Enpoints > IPv4`.
 We can see there are `110` IP endpoints. Now if we filter by highest packets first we can see the IP `10.9.23.102` having `70419` packets which concludes that this IP has the highest traffic ..
@@ -60,7 +60,7 @@ And hence we got the time at which the fist **HTTP connection to the malicious I
 
 ---
 
-##### What is the name of the zip file that was downloaded ?
+### What is the name of the zip file that was downloaded ?
 
 From previous question we can see the name of the file downloaded is `documents.zip` .
 
@@ -74,13 +74,13 @@ In HTTP protocol pane we can see the HOST name as `attirenepal.com`
 
 ![](attachment/afc91fd6354c882c04fa8ef5a66eec95.png)
 
-##### Without downloading the file, what is the name of the file in the zip file?
+### Without downloading the file, what is the name of the file in the zip file?
 
 We can simply follow the HTTP stream to see what are the content of the zip for that we need to `right click on the packet entry > Follow > HTTP stream`
 
 ![](attachment/662f9c6f00dd997a6b02651b73c08766.png)
 
-###### We can also do above by exporting the file
+#### We can also do above by exporting the file
 
 For this we need to get our hands on the `documents.zip` file which can be done by using the `export objects` option available in `File > Export Object > HTTP`
 
@@ -94,7 +94,7 @@ After saving when we unzip the `documents.zip` file we get the given result
 
 ![](attachment/841e876c6bc04de54de251076f98f0ed.png)
 
-##### What is the name of the webserver of the malicious IP from which the zip file was downloaded?
+### What is the name of the webserver of the malicious IP from which the zip file was downloaded?
 
 We can check in the `HTTP` stream name of the server is given as `LiteSpeed`
 
@@ -104,7 +104,7 @@ Also `version` of the server is `PHP/7.2.34`
 
 ![](attachment/b664f84dfd36d98157be41ea367933c7.png)
 
-##### Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?
+### Malicious files were downloaded to the victim host from multiple domains. What were the three domains involved with this activity?
 
 As we have already exported the `documents.zip` file onto the machine if use `strings` on the file at the near bottom we can see these domains :
 
@@ -120,16 +120,16 @@ Thus our answer is the above three domains
 
 > finejewels.com.au, thietbiagt.com, new.americold.com
 
-##### Which certificate authority issued the SSL certificate to the first domain from the previous question?
+### Which certificate authority issued the SSL certificate to the first domain from the previous question?
 
 For this we can do a `DNS Lookup` to know about the hosting provider which is `GoDaddy`.
 ![](attachment/bf0831c475f300fdbf395f9d7ab49227.png)
 
 > `GoDaddy`
 
-##### What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: enter the IP addresses in sequential order)
+### What are the two IP addresses of the Cobalt Strike servers? Use VirusTotal (the Community tab) to confirm if IPs are identified as Cobalt Strike C2 servers. (answer format: enter the IP addresses in sequential order)
 
-> [!HINT] HINT
+> [!TIP] HINT >
 > Check the Conversations menu option
 
 With the help of `hint` we'll check the conversations which is inside `Statistics > Conversations`
@@ -159,9 +159,9 @@ Thus the two IP address related to the Cobalt Strike server are
 > - 185.106.96.158
 > - 185.125.204.174
 
-##### What is the Host header for the first Cobalt Strike IP address from the previous question?
+### What is the Host header for the first Cobalt Strike IP address from the previous question?
 
-> [!Quote] Already answered
+> [!NOTE]
 > This questions answer is already in the above/previous answer. If you see the `image` we can see the `Host Header: ocsp[.]verisign[.]com` which is the host name for the given IP.
 
 **If you want to find using Filter:**
@@ -175,9 +175,9 @@ ip.addr == 185.106.96.158 and http.host
 
 > Thus the Hostname is: `ocsp.verisign.com`
 
-##### What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
+### What is the domain name for the first IP address of the Cobalt Strike server? You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
 
-> [!Quote] Already answered
+> [!NOTE]
 > This questions answer is already in the above/previous answer. If you see the `image` we can see the `C2 Server: survmeter[.]live,/gscp[.]R/,185[.]106[.]96[.]158,/gscp[.]R/` which are the domain name for the given IP.
 
 > Thus Domain name of IP `185.106.96.158` is `survmeter.live`
@@ -187,9 +187,9 @@ And If you want to search the DNS in `wireshark` we can make use of this filter
 
 ![](attachment/fc2b04a59f0cde4c1f154400b3fc03f7.png)
 
-##### What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
+### What is the domain name of the second Cobalt Strike server IP?  You may use VirusTotal to confirm if it's the Cobalt Strike server (check the Community tab).
 
-> [!Quote] Already answered
+> [!NOTE]
 > This questions answer is already in the above/previous answer. If you see the `image` we can see the `C2 Server: securitybusinpuff[.]com,/jquery-3[.]3[.]1[.]min[.]js,185[.]125[.]204[.]174,/jquery-3[.]3[.]1[.]min[.]js` which are the domain name for the given IP.
 
 > Hence Domain Name : `securitybusinpuff.com`
@@ -202,10 +202,10 @@ Run this filter `dns.a == 185.125.204.174`
 
 ![](attachment/3887095d967faf7b5754d40bc87beb15.png)
 
-##### What is the domain name of the post-infection traffic?
+### What is the domain name of the post-infection traffic?
 
-> [!HINT] HINT
-> Filter out for DNS queries
+> [!TIP]
+> HINT > Filter out for DNS queries
 
 Using the given filter we can see the Host: `maldivehost.net`
 
@@ -215,7 +215,7 @@ Using the given filter we can see the Host: `maldivehost.net`
 
 ![](attachment/6e8e2d1349c2df10132244a189ba7ccf.png)
 
-##### What was the length for the first packet sent out to the C2 server?
+### What was the length for the first packet sent out to the C2 server?
 
 > We can see the content length of the packet is : `281`
 
@@ -224,13 +224,13 @@ Using the given filter we can see the Host: `maldivehost.net`
 > [!NOTE] Content-Length
 > In above image we've answered Length of the packet (complete packet) and thus the Content-length when followed or viewed the packet is different.
 
-##### What was the Server header for the malicious domain from the previous question?
+### What was the Server header for the malicious domain from the previous question?
 
 We can find the server header in the previous question image which is titled as `Server: `
 
 > `Apache/2.4.49 (cPanel) OpenSSL/1.1.1l mod_bwlimited/1.4`
 
-##### The malware used an API to check for the IP address of the victim’s machine. What was the date and time when the DNS query for the IP check domain occurred? (**answer format**: yyyy-mm-dd hh:mm:ss UTC)
+### The malware used an API to check for the IP address of the victim’s machine. What was the date and time when the DNS query for the IP check domain occurred? (**answer format**: yyyy-mm-dd hh:mm:ss UTC)
 
 We can try to filter DNS packets which contains "`api`" word which will give us these results
 
@@ -238,15 +238,16 @@ We can try to filter DNS packets which contains "`api`" word which will give us 
 
 > Thus answer for this question is $\rightarrow$ `2021-09-24 17:00:04`
 
-##### What was the domain in the DNS query from the previous question?
+### What was the domain in the DNS query from the previous question?
 
 We can see in the above image the Domain Name is `api.ipify.org`
 Or you can check it in the details pane.
+
 ![](attachment/0ad26410cf60d8c1cafcf957ba61f422.png)
 
 ![](attachment/a8de1542fa8cd802446ce408474629b1.png)
 
-##### Looks like there was some malicious spam (malspam) activity going on. What was the first MAIL FROM address observed in the traffic?
+### Looks like there was some malicious spam (malspam) activity going on. What was the first MAIL FROM address observed in the traffic?
 
 If there was a `malspam` activity that means there must be more than a small amount of mails dropped from the same mail again and again so let's check it with `smtp` as filter.
 
@@ -260,7 +261,7 @@ And just after a little scroll we got the `MAIL FROM`
 
 > `farshin@mailfa.com`
 
-##### How many packets were observed for the SMTP traffic?
+### How many packets were observed for the SMTP traffic?
 
 Already answered in above question! $\rightarrow$ `1439`
 
