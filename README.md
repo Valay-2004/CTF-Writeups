@@ -38,6 +38,7 @@
 - [Letter](./TryHackMe/EASY/Letter/)
 - [DevDiaries](./TryHackMe/EASY/DevDiaries/)
 - [digdug](./TryHackMe/EASY/digdug/)
+- [Dreaming](./TryHackMe/EASY/Dreaming/)
 
 ### MEDIUM
 
