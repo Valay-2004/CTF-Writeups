@@ -50,6 +50,7 @@
 - [You Got Mail](./TryHackMe/MEDIUM/You-Got-Mail/)
 - [Matroshka](./TryHackMe/MEDIUM/Matroshka/)
 - [C2 Carnage](./TryHackMe/MEDIUM/Carnage/)
+- [whyhackme](./TryHackMe/MEDIUM/whyhackme/)
 
 ### HARD
 
