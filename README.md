@@ -39,6 +39,7 @@
 - [DevDiaries](./TryHackMe/EASY/DevDiaries/)
 - [digdug](./TryHackMe/EASY/digdug/)
 - [Dreaming](./TryHackMe/EASY/Dreaming/)
+- [Digital Footprint](./TryHackMe/EASY/DigitalFootprint/)
 
 ### MEDIUM
 
