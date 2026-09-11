@@ -11,6 +11,7 @@
 - [TryHackMe Writeups](#-tryhackme-writeups)
   - [EASY](#easy)
   - [MEDIUM](#medium)
+  - [HARD](#hard)
 - [picoCTF 2026](#-picoctf-2026)
   - [Binary Exploitation](#binary-exploitation)
   - [Forensics](#forensics)
@@ -89,3 +90,11 @@
 ### Web Exploitation
 
 - [North-South (100 pt)](./PicoCTF/picoCTF26/WebExploitation/North-South.md)
+
+---
+
+## HackTheBox Writeups
+
+### EASY
+
+- [Flag Command](./HackTheBox/EASY/FlagCommand/FlagCommand.md)
