@@ -53,6 +53,7 @@
 - [Matroshka](./TryHackMe/MEDIUM/Matroshka/)
 - [C2 Carnage](./TryHackMe/MEDIUM/Carnage/)
 - [whyhackme](./TryHackMe/MEDIUM/whyhackme/)
+- [whatsyourname](./TryHackMe/MEDIUM/whatsyourname/)
 
 ### HARD
 
