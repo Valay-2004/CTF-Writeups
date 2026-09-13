@@ -61,6 +61,15 @@
 
 ---
 
+## HackTheBox Writeups
+
+### EASY
+
+- [Flag Command](./HackTheBox/EASY/FlagCommand/)
+- [Space Explorer](./HackTheBox/EASY/SpaceExplorer/)
+
+---
+
 ## picoCTF 2026 Writeups
 
 ### Binary Exploitation
@@ -93,9 +102,3 @@
 - [North-South (100 pt)](./PicoCTF/picoCTF26/WebExploitation/North-South.md)
 
 ---
-
-## HackTheBox Writeups
-
-### EASY
-
-- [Flag Command](./HackTheBox/EASY/FlagCommand/FlagCommand.md)
