@@ -67,6 +67,7 @@
 
 - [Flag Command](./HackTheBox/EASY/FlagCommand/)
 - [Space Explorer](./HackTheBox/EASY/SpaceExplorer/)
+- [Three](./HackTheBox/EASY/Three/)
 
 ---
 
