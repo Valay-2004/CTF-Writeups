@@ -70,6 +70,7 @@
 - [Space Explorer](./HackTheBox/EASY/SpaceExplorer/)
 - [Three](./HackTheBox/EASY/Three/)
 - [Cap](./HackTheBox/EASY/Cap/)
+- [Management](./HackTheBox/EASY/Management/)
 
 ---
 
